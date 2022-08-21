@@ -39,17 +39,17 @@ jobs:
     displayName: Execute echo command
     inputs:
       targetType: inline
-      - script: date /t
-        displayName: Get the date
-      - script: dir
-        workingDirectory: $(Agent.BuildDirectory)
-        displayName: List contents of a folder
-      - script: |
-          set MYVAR=foo
-          set
-        displayName: Set a variable and then display all
-        env:
-          aVarFromYaml: someValue
+      script: date /t
+      displayName: Get the date
+      script: dir
+      workingDirectory: $(Agent.BuildDirectory)
+      displayName: List contents of a folder
+      script: |
+        set MYVAR=foo
+        set
+      displayName: Set a variable and then display all
+      env:
+        aVarFromYaml: someValue
   - task: ArchiveFiles@2
     displayName: Archive files
     inputs:
