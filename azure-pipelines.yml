@@ -31,6 +31,8 @@ jobs:
 
 - job: Job2
   displayName: Agent-Anil-Job2
+  pool:
+    name: MyOwnAzurePool
   steps:
   - checkout: self
     clean: true
