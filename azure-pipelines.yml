@@ -41,7 +41,6 @@ jobs:
     displayName: Execute echo command
     inputs:
       targetType: inline
-      script: date /t
       displayName: Get the date
       workingDirectory: $(Agent.BuildDirectory)
   - task: ArchiveFiles@2
