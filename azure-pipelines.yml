@@ -42,4 +42,4 @@ jobs:
     displayName: Execute echo command
     inputs:
       targetType: inline
-      script: echo Execute echo command stage
+      script: echo Execute echo command stage 2
