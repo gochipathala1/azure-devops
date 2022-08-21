@@ -4,8 +4,8 @@ resources:
     type: git
     ref: main
 jobs:
-- job: Job_1
-  displayName: Agent-Anil
+- job: Job1
+  displayName: Agent-Anil-Job1
   pool:
     name: MyOwnAzurePool
   steps:
@@ -28,3 +28,18 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
 ...
+
+jobs:
+- job: Job2
+  displayName: Agent-Anil-Job2
+  pool:
+    name: MyOwnAzurePool
+  steps:
+  - checkout: self
+    clean: true
+    fetchTags: false
+  - task: PowerShell@2
+    displayName: Execute echo command
+    inputs:
+      targetType: inline
+      script: echo Execute echo command stage
