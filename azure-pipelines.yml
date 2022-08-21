@@ -4,7 +4,7 @@ resources:
     type: git
     ref: main
 jobs:
-- job: Job1
+- job: Job_1
   displayName: Agent-Anil-Job1
   pool:
     name: MyOwnAzurePool
@@ -27,13 +27,11 @@ jobs:
       includeRootFolder: false
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
-...
+#...
 
 jobs:
-- job: Job2
+- job: Job_2
   displayName: Agent-Anil-Job2
-  pool:
-    name: MyOwnAzurePool
   steps:
   - checkout: self
     clean: true
