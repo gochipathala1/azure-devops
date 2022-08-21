@@ -1,19 +1,30 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: main
+jobs:
+- job: Job_1
+  displayName: Agent-Anil
+  pool:
+    name: MyOwnAzurePool
+  steps:
+  - checkout: self
+    clean: true
+    fetchTags: false
+  - task: PowerShell@2
+    displayName: Execute echo command
+    inputs:
+      targetType: inline
+      script: echo "Execute echo command stage"#>-
+#        if (Test-Path "extensions.csproj") {
+#             dotnet build extensions.csproj --output ./bin
+#        }
+  - task: ArchiveFiles@2
+    displayName: Archive files
+#    inputs:
+#      rootFolderOrFile: $(System.DefaultWorkingDirectory)
+#      includeRootFolder: false
+#  - task: PublishBuildArtifacts@1
+#    displayName: 'Publish Artifact: drop'
+#...
