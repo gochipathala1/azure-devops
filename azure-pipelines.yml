@@ -41,7 +41,7 @@ jobs:
     displayName: Execute echo command
     inputs:
       targetType: inline
-      script: echo "Execute echo command stage"#>-
+      script: $location = Get-Location
 #        if (Test-Path "extensions.csproj") {
 #             dotnet build extensions.csproj --output ./bin
 #        }
