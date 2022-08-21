@@ -4,7 +4,7 @@ resources:
     type: git
     ref: main
 jobs:
-- job: Job_1
+- job: Job1
   displayName: Agent-Anil-Job1
   pool:
     name: MyOwnAzurePool
@@ -29,8 +29,8 @@ jobs:
     displayName: 'Publish Artifact: drop'
 #...
 
-- job: Job_2
-  displayName: Agent-Anil-Job1
+- job: Job2
+  displayName: Agent-Anil-Job2
   pool:
     name: MyOwnAzurePool
   steps:
