@@ -27,17 +27,4 @@ jobs:
       includeRootFolder: false
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
-#...
-
-jobs:
-- job: Job_2
-  displayName: Agent-Anil-Job2
-  steps:
-  - checkout: self
-    clean: true
-    fetchTags: false
-  - task: PowerShell@2
-    displayName: Execute echo command
-    inputs:
-      targetType: inline
-      script: echo Execute echo command stage 2
+...
