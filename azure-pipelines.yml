@@ -31,8 +31,6 @@ jobs:
 
 - job: Job2
   displayName: Agent-Anil-Job2
-  pool:
-    name: MyOwnAzurePool
   steps:
   - checkout: self
     clean: true
@@ -41,10 +39,17 @@ jobs:
     displayName: Execute echo command
     inputs:
       targetType: inline
-      script: $location = Get-Location
-#        if (Test-Path "extensions.csproj") {
-#             dotnet build extensions.csproj --output ./bin
-#        }
+      - script: date /t
+        displayName: Get the date
+      - script: dir
+        workingDirectory: $(Agent.BuildDirectory)
+        displayName: List contents of a folder
+      - script: |
+          set MYVAR=foo
+          set
+        displayName: Set a variable and then display all
+        env:
+          aVarFromYaml: someValue
   - task: ArchiveFiles@2
     displayName: Archive files
     inputs:
