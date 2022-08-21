@@ -42,7 +42,6 @@ jobs:
       script: date /t
       displayName: Get the date
       workingDirectory: $(Agent.BuildDirectory)
-      displayName: List contents of a folder
   - task: ArchiveFiles@2
     displayName: Archive files
     inputs:
