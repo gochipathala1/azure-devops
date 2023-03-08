@@ -7,7 +7,7 @@ jobs:
 - job: Job1
   displayName: Agent-Anil-Job1
   pool:
-    name: MyOwnAzurePool
+    name: default
   steps:
   - checkout: self
     clean: true
@@ -32,7 +32,7 @@ jobs:
 - job: Job2
   displayName: Agent-Anil-Job2
   pool:
-    name: MyOwnAzurePool
+    name: default
   steps:
   - checkout: self
     clean: true
